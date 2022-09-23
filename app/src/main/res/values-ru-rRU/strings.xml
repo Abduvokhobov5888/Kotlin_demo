@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Передово</string>
+    <string name="str_english">Английский</string>
+    <string name="str_russian">Русский</string>
+    <string name="str_uzbek">Узбекский</string>
+</resources>

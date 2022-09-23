@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yuqori</string>
+    <string name="str_english">Ingliz tili</string>
+    <string name="str_russian">Rus tili</string>
+    <string name="str_uzbek">O'zbek tili</string>
+</resources>
