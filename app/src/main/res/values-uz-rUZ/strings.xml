@@ -4,4 +4,7 @@
     <string name="str_english">Ingliz tili</string>
     <string name="str_russian">Rus tili</string>
     <string name="str_uzbek">O`zbek tili</string>
+    <string name="str_japan">Yapon tili</string>
+    <string name="str_korea">Kores tili</string>
+    <string name="str_china">Xitoy tili</string>
 </resources>

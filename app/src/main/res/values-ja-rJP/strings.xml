@@ -4,4 +4,7 @@
     <string name="str_english">英語</string>
     <string name="str_russian">ロシア語</string>
     <string name="str_uzbek">ウズベク語</string>
+    <string name="str_japan">日本</string>
+    <string name="str_korea">韓国</string>
+    <string name="str_china">中国</string>
 </resources>

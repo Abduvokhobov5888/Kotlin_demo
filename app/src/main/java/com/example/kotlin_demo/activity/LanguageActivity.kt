@@ -36,15 +36,15 @@ class LanguageActivity: AppCompatActivity() {
         }
 
         b_japan.setOnClickListener {
-            setLocale("jp")
+            setLocale("ja")
         }
 
         b_korea.setOnClickListener {
-            setLocale("kr")
+            setLocale("ko")
         }
 
         b_china.setOnClickListener {
-            setLocale("cn")
+            setLocale("zh")
         }
     }
 
