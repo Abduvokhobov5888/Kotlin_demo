@@ -15,9 +15,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initViews(){
-        var button = findViewById<Button>(R.id.button_open)
-        button.text = getString(R.string.app_name)
-        button.setOnClickListener{
+        var b_open = findViewById<Button>(R.id.button_open)
+        b_open.text = getString(R.string.app_name)
+
+        b_open.setOnClickListener{
             callLanguageActivity()
         }
     }

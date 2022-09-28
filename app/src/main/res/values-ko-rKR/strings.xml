@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">고급</string>
+    <string name="str_english">영어</string>
+    <string name="str_russian">러시아어</string>
+    <string name="str_uzbek">우즈벡어</string>
+</resources>

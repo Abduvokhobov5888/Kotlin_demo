@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Advanced</string>
-    <string name="str_english">Englis</string>
+    <string name="str_english">English</string>
     <string name="str_russian">Russian</string>
     <string name="str_uzbek">Uzbek</string>
+    <string name="str_japan">Japan</string>
+    <string name="str_korea">Korea</string>
+    <string name="str_china">China</string>
+
 </resources>
