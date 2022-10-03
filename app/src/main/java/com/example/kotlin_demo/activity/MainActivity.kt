@@ -19,12 +19,17 @@ class MainActivity : AppCompatActivity() {
         b_open.text = getString(R.string.app_name)
 
         b_open.setOnClickListener{
-            callLanguageActivity()
+            callPrefenceActivity()
         }
     }
 
     fun callLanguageActivity(){
         val intent = Intent(this, LanguageActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun callPrefenceActivity(){
+        val intent = Intent(this, PrefenceActivity::class.java)
         startActivity(intent)
     }
 }
