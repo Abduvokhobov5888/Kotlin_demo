@@ -4,7 +4,9 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.kotlin_demo.MyApplication
 import com.example.kotlin_demo.R
+import com.example.kotlin_demo.managers.LocaleManager
 import java.util.*
 
 class LanguageActivity: AppCompatActivity() {
@@ -24,7 +26,8 @@ class LanguageActivity: AppCompatActivity() {
         var b_china = findViewById<Button>(R.id.b_china)
 
         b_english.setOnClickListener{
-            setLocale("en")
+            MyApplication.localeManager!!.setNewLocale(this, LocaleManager.LANGUAGE_ENGLISH)
+           // setLocale("en")
         }
 
         b_russian.setOnClickListener {

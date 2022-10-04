@@ -23,6 +23,9 @@ class LocaleManager(context: Context) {
         const val LANGUAGE_ENGLISH = "en"
         const val LANGUAGE_RUSSIA = "ru"
         const val LANGUAGE_UZBEK = "uz"
+        const val LANGUAGE_KOREA = "ko"
+        const val LANGUAGE_JAPAN = "ja"
+        const val LANGUAGE_CHINA = "zh"
         private const val LANGUAGE_KEY = "language key"
 
         fun getLocal(res: Resources): Locale{
@@ -61,17 +64,20 @@ class LocaleManager(context: Context) {
     }
 
     private fun updateResources(context: Context, language: String?){
-        val local = Locale(language)
-        Locale.setDefault(local)
+        val locale = Locale(language)
+        Locale.setDefault(locale)
         val res = context.resources
         val config = Configuration(res.configuration)
         if (isAtLeastVersion(VERSION_CODES.N)){
           //  Log.d("@@@", "VERSION_CODES.N")
-            setLocaleForApi24(config, local)
+            setLocaleForApi24(config, locale)
+        }
+        else if (isAtLeastVersion((Build.VERSION_CODES.JELLY_BEAN_MR1))){
+            config.setLocale(locale)
         }
         else{
           //  Log.d("@@@","VERSION_CODES>>")
-            config.locales = local
+            config.locales = locale
         }
         res.updateConfiguration(config, res.displayMetrics)
     }
@@ -87,4 +93,11 @@ class LocaleManager(context: Context) {
         val locales = set.toTypedArray()
         configuration.setLocale(LocaleList(*locales))
     }
+
+    fun setNewLocale(c: Context, language: String?) {
+        persistLanguage(language)
+        update(c, language)
+    }
+
+
 }
