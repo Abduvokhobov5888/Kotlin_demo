@@ -7,7 +7,7 @@ import com.example.kotlin_demo.managers.LocaleManager
 class MyApplication: Application() {
 
     companion object{
-        val localeManager: LocaleManager? = null
+        var localeManager: LocaleManager? = null
     }
 
     override fun onCreate() {

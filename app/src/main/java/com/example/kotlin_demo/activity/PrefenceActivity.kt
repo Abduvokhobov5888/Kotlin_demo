@@ -25,7 +25,7 @@ class PrefenceActivity : AppCompatActivity() {
 
         b_save.setOnClickListener{
             val email = et_email.text.toString().trim()
-            saveEmail(email)
+            PrefsManager.getInstance(this)?.saveData("email", email)
         }
 
         b_load.setOnClickListener {
@@ -34,18 +34,4 @@ class PrefenceActivity : AppCompatActivity() {
         }
 
     }
-
-    fun saveEmail(email:String){
-        val prefs = applicationContext.getSharedPreferences("MyPrefs", MODE_PRIVATE)
-        val editor = prefs.edit()
-        editor.putString("email", email)
-        editor.apply()
-
-    }
-
-    fun loadEmail():String?{
-        val prefs = applicationContext.getSharedPreferences("MyPrefs", MODE_PRIVATE)
-        return prefs.getString("email","vip.real.aa@gmail.com")
-    }
-
-    }
+}

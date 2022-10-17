@@ -30,7 +30,7 @@ class LocaleManager(context: Context) {
 
         fun getLocal(res: Resources): Locale{
             val config = res.configuration
-            return if (isAtLeastVersion(VERSION_CODES.N)) config.locales[0] else config.locale
+            return if (isAtLeastVersion(Build.VERSION_CODES.N)) config.locales[0] else config.locale
         }
 
         fun isAtLeastVersion(version: Int): Boolean{
@@ -58,7 +58,12 @@ class LocaleManager(context: Context) {
         return appContext
     }
 
-    @SuppressLint(...value: "ApplySharedPref")
+    fun setNewLocale(c: Context, language: String?) {
+        presistLanguage(language!!)
+        update(c, language)
+    }
+
+    @SuppressLint("ApplySharedPref")
     private fun presistLanguage(language: String){
         prefs.edit().putString(LANGUAGE_KEY, language).commit()
     }
@@ -77,13 +82,13 @@ class LocaleManager(context: Context) {
         }
         else{
           //  Log.d("@@@","VERSION_CODES>>")
-            config.locales = locale
+            config.locale = locale
         }
         res.updateConfiguration(config, res.displayMetrics)
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private fun setLocaleForApi24(configuration: Configuration, target: Locale){
+    private fun setLocaleForApi24(config: Configuration, target: Locale){
         val set: MutableSet<Locale> = LinkedHashSet()
         set.add(target)
         val all = LocaleList.getDefault()
@@ -91,12 +96,7 @@ class LocaleManager(context: Context) {
             set.add(all[i])
         }
         val locales = set.toTypedArray()
-        configuration.setLocale(LocaleList(*locales))
-    }
-
-    fun setNewLocale(c: Context, language: String?) {
-        persistLanguage(language)
-        update(c, language)
+        config.setLocale(LocaleList(*locales))
     }
 
 
