@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         b_open.text = getString(R.string.app_name)
 
         b_open.setOnClickListener{
-            callPrefenceActivity()
+            callLanguageActivity()
         }
     }
 

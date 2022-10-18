@@ -96,7 +96,7 @@ class LocaleManager(context: Context) {
             set.add(all[i])
         }
         val locales = set.toTypedArray()
-        config.setLocale(LocaleList(*locales))
+       // config.setLocale(LocaleList(*locales))
     }
 
 

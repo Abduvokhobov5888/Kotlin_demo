@@ -1,5 +1,6 @@
 package com.example.kotlin_demo.activity
 
+import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Button
@@ -10,6 +11,7 @@ import com.example.kotlin_demo.managers.LocaleManager
 import java.util.*
 
 class LanguageActivity: AppCompatActivity() {
+        lateinit var context: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +20,7 @@ class LanguageActivity: AppCompatActivity() {
     }
 
     fun initViews(){
+        context = this;
         var b_english = findViewById<Button>(R.id.b_english)
         var b_russian = findViewById<Button>(R.id.b_russian)
         var b_uzbek = findViewById<Button>(R.id.b_uzbek)
@@ -26,28 +29,39 @@ class LanguageActivity: AppCompatActivity() {
         var b_china = findViewById<Button>(R.id.b_china)
 
         b_english.setOnClickListener{
-            MyApplication.localeManager!!.setNewLocale(this, LocaleManager.LANGUAGE_ENGLISH)
+            MyApplication.localeManager!!.setNewLocale(context,LocaleManager.LANGUAGE_ENGLISH)
+            finish()
            // setLocale("en")
         }
 
         b_russian.setOnClickListener {
-            setLocale("ru")
+            MyApplication.localeManager!!.setNewLocale(context ,LocaleManager.LANGUAGE_RUSSIA)
+            finish()
+        //setLocale("ru")
         }
 
         b_uzbek.setOnClickListener {
-            setLocale("uz")
+            MyApplication.localeManager!!.setNewLocale(context ,LocaleManager.LANGUAGE_UZBEK)
+            finish()
+        //setLocale("uz")
         }
 
         b_japan.setOnClickListener {
-            setLocale("ja")
+            MyApplication.localeManager!!.setNewLocale(context ,LocaleManager.LANGUAGE_JAPAN)
+            finish()
+            //setLocale("ja")
         }
 
         b_korea.setOnClickListener {
-            setLocale("ko")
+            MyApplication.localeManager!!.setNewLocale(context ,LocaleManager.LANGUAGE_KOREA)
+            finish()
+          //  setLocale("ko")
         }
 
         b_china.setOnClickListener {
-            setLocale("zh")
+            MyApplication.localeManager!!.setNewLocale(context ,LocaleManager.LANGUAGE_CHINA)
+            finish()
+           // setLocale("zh")
         }
     }
 
